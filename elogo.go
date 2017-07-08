@@ -5,7 +5,9 @@ import (
 )
 
 const (
+	// K is the default K-Factor
 	K = 32
+	// D is the default deviation
 	D = 400
 )
 
@@ -67,7 +69,7 @@ func (e *Elo) Outcome(ratingA, ratingB int, score float64) (Outcome, Outcome) {
 	return e.OutcomeWithFactors(ratingA, ratingB, score, e.K, e.D)
 }
 
-// Outcome overrides default factors and gives an Outcome object for each player for the given score
+// OutcomeWithFactors overrides default factors and gives an Outcome object for each player for the given score
 func (e *Elo) OutcomeWithFactors(ratingA, ratingB int, score float64, k, d int ) (Outcome, Outcome) {
 	delta := e.RatingDeltaWithFactors(ratingA, ratingB, score, k, d)
 	return Outcome{ delta, ratingA + delta }, Outcome{ -delta, ratingB - delta }
