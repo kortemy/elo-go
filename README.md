@@ -1,3 +1,5 @@
+[![GoDoc](https://godoc.org/github.com/kortemy/elo-go?status.svg)](https://godoc.org/github.com/kortemy/elo-go)
+
 # Elo for Go
 
 Elo ranking system for Go (Golang) programming language.
