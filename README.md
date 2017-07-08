@@ -38,13 +38,17 @@ outcomeB.Delta // -20
 outcomeB.Rating // 1580
 ```
 
-All `Elo` methods have `WithFactor` variants, where you can override factors for that specific method call:
+All `Elo` methods have `WithFactors` variants, where you can override factors for that specific method call:
 ```
+
 kFactor = 40
 deviation := 800
 
-elo.ExpectedScore(rankA, rankB, deviation)
-elo.RatingDelta(rankA, rankB, score, kFactor, deviation)
-elo.Rating(rankA, rankB, score, kFactor, deviation)
-elo.Outcome(rankA, rankB, score, kFactor, deviation)
+elo := NewEloWithFactors(kFactor, deviation) // set default factors on elo struct
+
+// override factors for indiviual methods
+elo.ExpectedScoreWithFactors(rankA, rankB, deviation)
+elo.RatingDeltaWithFactors(rankA, rankB, score, kFactor, deviation)
+elo.RatingWithFactors(rankA, rankB, score, kFactor, deviation)
+elo.OutcomeWithFactors(rankA, rankB, score, kFactor, deviation)
 ```
