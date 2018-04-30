@@ -43,18 +43,17 @@ func TestElo(t *testing.T) {
 		t.Fatalf("Expected rating if draw %v, but got %v", 1504, rating3)
 	}
 
-	outcomeA1, outcomeB1 := elo.Outcome(A, B, 1) 
+	outcomeA1, outcomeB1 := elo.Outcome(A, B, 1)
 	if outcomeA1.Rating != 1520 || outcomeA1.Delta != 20 {
 		t.Fatalf("Expected rating %v and delta %v if A wins, but got outcome %v", 1520, 20, outcomeA1)
-	}	
+	}
 	if outcomeB1.Rating != 1580 || outcomeB1.Delta != -20 {
 		t.Fatalf("Expected rating %v and delta %v if B loses, but got outcome %v", 1580, -20, outcomeB1)
-	}	
+	}
 }
 
 func TestEloWithFactors(t *testing.T) {
 	elo := NewEloWithFactors(40, 800)
-
 
 	expected := elo.ExpectedScore(A, B)
 	if expected != 0.4285368825916186 {
@@ -87,11 +86,11 @@ func TestEloWithFactors(t *testing.T) {
 		t.Fatalf("Expected rating if draw %v, but got %v", 1502, rating3)
 	}
 
-	outcomeA1, outcomeB1 := elo.Outcome(A, B, 1) 
+	outcomeA1, outcomeB1 := elo.Outcome(A, B, 1)
 	if outcomeA1.Rating != 1522 || outcomeA1.Delta != 22 {
 		t.Fatalf("Expected rating %v and delta %v if A wins, but got outcome %v", 1522, 22, outcomeA1)
-	}	
+	}
 	if outcomeB1.Rating != 1578 || outcomeB1.Delta != -22 {
 		t.Fatalf("Expected rating %v and delta %v if B loses, but got outcome %v", 1578, -22, outcomeB1)
-	}	
+	}
 }
