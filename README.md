@@ -10,9 +10,9 @@ Elo ranking system for Go (Golang) programming language.
 
 There are two factors that affect how Elo works - *K-factor* and *deviation*.
 
-**Deviation** controls how much the difference in ratings affects the _expected_ outcome. The higher the number, the higher expected chance that a better rated player wins. Default deviation is 400. 
+**Deviation** controls how much the difference in ratings affects the _expected_ outcome. The higher the number, the higher expected chance that a better rated player wins. The default deviation is 400. 
 
-**K-factor** controls how much points are gained/lost after the outcome of the match is known. The higher the factor, players rating is more affected. This is especially useful if you want to control point fluctuation based on number of games played. Players with less games played should have higher _k-factor_, because their early ranking doesn't necessarily replicate their skill level. Default k-factor is 24.
+**K-factor** controls how much points are gained/lost after the outcome of the match is known. The higher the factor, players rating is more affected. This is especially useful if you want to control point fluctuation based on number of games played. Players with less games played should have higher _k-factor_, because their early ranking doesn't necessarily replicate their skill level. The default k-factor is 32.
 
 ## Documentation
 
